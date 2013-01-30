@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+{% block stylesheets %}
+    {% stylesheets '@BootstrapBundle/Resources/public/css/bootstrap/bootstrap.less' output='bootstrap.css' filter='?yui_css,less' %}
+        <link href="{{ asset_url }}" rel="stylesheet" />
+    {% endstylesheets %}
+    {% stylesheets '@ProjectBundle/Resources/public/css/project.scss' output='css/project.css' filter='?yui_css,compass' %}
+        <link href="{{ asset_url }}" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+    {% javascripts '@BootstrapBundle/Resources/public/js/bootstrap/bootstrap-transition.js' '@BootstrapBundle/Resources/public/js/bootstrap/bootstrap-tooltip.js' '@BootstrapBundle/Resources/public/js/bootstrap/*.js' output='bootstrap.js' filter='?yui_js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
