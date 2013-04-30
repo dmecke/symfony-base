@@ -55,6 +55,9 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+        resolve_target_entities:
+            Cunningsoft\ChatBundle\Entity\AuthorInterface: Cunningsoft\ProjectBundle\Entity\User
+            Cunningsoft\MessageBundle\Entity\UserInterface: Cunningsoft\ProjectBundle\Entity\User
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -63,3 +66,12 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: Cunningsoft\ProjectBundle\Entity\User
+
+knp_time: ~
+
+cunningsoft_chat: ~

@@ -19,7 +19,13 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new Knp\Bundle\TimeBundle\KnpTimeBundle(),
+            new Cunningsoft\UserBundle\UserBundle(),
             new Cunningsoft\BootstrapBundle\BootstrapBundle(),
+            new Cunningsoft\ChatBundle\CunningsoftChatBundle(),
+            new Cunningsoft\MessageBundle\CunningsoftMessageBundle(),
+            new CunningsoftCustom\MessageBundle\CunningsoftCustomMessageBundle(),
             new Cunningsoft\ProjectBundle\ProjectBundle(),
         );
 
